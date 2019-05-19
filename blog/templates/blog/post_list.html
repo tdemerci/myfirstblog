@@ -1,18 +1,24 @@
+{% load static %}
 <html>
     <head>
+        <link href="//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
         <title>Django Girls blog</title>
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="{% static 'css/blog.css' %}">
     </head>
     <body>
         <div>
-    <h1><a href="/">Django Girls Blog</a></h1>
-</div>
+            <h1><a href="/">Django Girls Blog</a></h1>
+            <img src = "https://cdn.vox-cdn.com/thumbor/8KenS3RGIBpRvPVzvvayJ27FqEk=/0x0:2040x1362/920x613/filters:focal(784x229:1110x555):format(webp)/cdn.vox-cdn.com/uploads/chorus_image/image/63851879/grumpy-cat-TF2014-stock2_2040.0.jpg" alt = "cat">
+        </div>
 
-{% for post in posts %}
-    <div>
-        <p>published: {{ post.published_date }}</p>
-        <h2><a href="">{{ post.title }}</a></h2>
-        <p>{{ post.text|linebreaksbr }}</p>
-    </div>
-{% endfor %}
+        {% for post in posts %}
+            <div>
+                <p>published: {{ post.published_date }}</p>
+                <h2><a href="">{{ post.title }}</a></h2>
+                <p>{{ post.text|linebreaksbr }}</p>
+            </div>
+        {% endfor %}
     </body>
 </html>
